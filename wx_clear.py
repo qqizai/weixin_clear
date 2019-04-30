@@ -9,7 +9,7 @@ from wxpy import *
 import time
 import random
 
-bot = Bot()
+bot = Bot(console_qr=1)  # Linux环境console_qr=2  windows环境console_qr=1
 all_friends = bot.friends()
 myself = bot.self
 print('----------------BEGIN----------------')
@@ -19,7 +19,7 @@ myself.send("下面开始逐个测试，大概500个好友要半个钟，依次�
 
 index = 1
 for user in all_friends:
-    time.sleep(random.randint(0,9))
+    time.sleep(random.randint(0, 9))
     try:
         if user != myself:
             print("["+str(index)+"/"+str(len(all_friends))+"] " + user.name)
